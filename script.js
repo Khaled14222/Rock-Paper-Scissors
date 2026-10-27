@@ -1,11 +1,11 @@
 function getComputerChoice(){
   let cpu = Math.random();
   let cpuChoice
-  if(cpu <= 0.3){
+  if(cpu <= 0.33){
      cpuChoice = "ROCK";
-  } else if (cpu <= 0.6 && cpu > 0.3){
+  } else if (cpu <= 0.66 && cpu > 0.33){
      cpuChoice = "PAPER"
-  } else if (cpu <= 1 && cpu > 0.6){
+  } else if (cpu <= 1 && cpu > 0.66){
     cpuChoice = "SCISSORS"
   }
   
@@ -20,12 +20,14 @@ function getComputerChoice(){
  return choice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 
 
 function playGame(){
+  let humanScore = 0;
+  let computerScore = 0;
+
   for(let i=0;i <5;i++){
 
     function playRound(ch,cp){
@@ -60,9 +62,11 @@ function playGame(){
   
   if(humanScore > computerScore){
     console.log("You've WON!")
-  } else  {
+  } else if(humanScore == computerScore) {
+    console.log("It's a draw!")
+  } else (
     console.log("the game is over! you LOST!!")
-  }
+  )
 } 
 
 
