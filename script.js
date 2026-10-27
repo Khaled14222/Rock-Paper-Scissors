@@ -13,4 +13,11 @@ function getComputerChoice(){
   console.log(cpu)
 }
 
+function getHumanChoice(){
+ let choice = prompt("What's your choice?: ")
+ choice = choice.toUpperCase();
+ console.log(choice)
+}
+
+getHumanChoice();
 getComputerChoice()
