@@ -9,6 +9,8 @@ function getComputerChoice(){
     cpuChoice = "scissors"
   }
 
+
+  return cpuChoice;
   console.log(cpuChoice);
   console.log(cpu)
 }
@@ -17,7 +19,10 @@ function getHumanChoice(){
  let choice = prompt("What's your choice?: ")
  choice = choice.toUpperCase();
  console.log(choice)
+ return choice;
 }
+let humanScore = 0;
+let computerScore = 0;
 
 getHumanChoice();
 getComputerChoice()
