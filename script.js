@@ -17,9 +17,17 @@ function getComputerChoice(){
   return cpuChoice;
 }
 
+const buttons = document.querySelectorAll('.myBtn');
+
+buttons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    const value = event.target.value; 
+    console.log(value); 
+  });
+});
+
  function getHumanChoice(){
- let choice;
- choice = choice.toUpperCase();
+ let choice ;
  console.log(choice)
  return choice;
 }
