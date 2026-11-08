@@ -1,3 +1,7 @@
+let humanScore = 0;
+let computerScore = 0;
+
+
 function getComputerChoice(){
   let cpu = Math.random();
   let cpuChoice
@@ -14,21 +18,13 @@ function getComputerChoice(){
 }
 
  function getHumanChoice(){
- let choice = prompt("What's your choice?: ")
+ let choice;
  choice = choice.toUpperCase();
  console.log(choice)
  return choice;
 }
 
 
-
-
-
-function playGame(){
-  let humanScore = 0;
-  let computerScore = 0;
-
-  for(let i=0;i <5;i++){
 
     function playRound(ch,cp){
       let results
@@ -55,10 +51,12 @@ function playGame(){
         console.log(scores);
       }
     }
+
+
   let ComCh = getComputerChoice();
   let HumCh = getHumanChoice();  
   playRound(HumCh, ComCh);
-  }
+  
   
   if(humanScore > computerScore){
     console.log("You've WON!")
@@ -67,7 +65,5 @@ function playGame(){
   } else (
     console.log("the game is over! you LOST!!")
   )
-} 
 
 
-playGame();
