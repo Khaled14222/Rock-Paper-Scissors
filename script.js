@@ -9,12 +9,14 @@ buttons.forEach(button => {
   button.addEventListener('click', (event) => {
     const value = event.target.value; 
     getHumanChoice(value);
-    console.log(value); 
+    const cpuChoice = getComputerChoice();
+    
+    playRound(value, cpuChoice);
   });
 });
 
 function getHumanChoice(choice){
-  console.log(`the player picked ${choice}!`)
+  choice = choice.toUpperCase();
   return choice;
 }
 
@@ -33,10 +35,11 @@ return cpuChoice;
 }
 
 
+
 function playRound(ch,cp){
   let results
   let scores
-  
+
   if(ch === "SCISSORS" && cp === "PAPER" || ch === "PAPER" && cp === "ROCK" || ch === "ROCK" && cp === "SCISSORS"){
     humanScore++;
     results = `you picked ${ch}, Computer picked ${cp}, you win!`
@@ -57,20 +60,16 @@ function playRound(ch,cp){
     console.log (results);
     console.log(scores);
   }
+
+
+
 }
 
 
-let ComCh = getComputerChoice();
-let HumCh = getHumanChoice();  
-//playRound(HumCh, ComCh);
 
-
-//if(humanScore > computerScore){
-//  console.log("You've WON!")
-//} else if(humanScore == computerScore) {
-//  console.log("It's a draw!")
-//} else (
-//  console.log("the game is over! you LOST!!")
-//)
-
+  if(humanScore > computerScore){
+    console.log("You've WON!")
+  }  else (
+    console.log("the game is over! you LOST!!")
+  )
 
