@@ -1,6 +1,13 @@
 let humanScore = 0;
 let computerScore = 0;
 
+//Create new html to show the results//
+
+let res = document.createElement('p');
+let InfoDown = document.querySelector(".Info");
+
+res.textContent = `The player score:${humanScore}, The cpu score is:${computerScore}`;
+InfoDown.appendChild(res);
 
 //**First get the player input and then pass the value to comparison */
 const buttons = document.querySelectorAll('.myBtn');
@@ -12,6 +19,7 @@ buttons.forEach(button => {
     const cpuChoice = getComputerChoice();
     
     playRound(value, cpuChoice);
+    return value;
   });
 });
 
@@ -62,14 +70,5 @@ function playRound(ch,cp){
   }
 
 
-
+  res.textContent = `The player score:${humanScore}, The cpu score is:${computerScore}`;
 }
-
-
-
-  if(humanScore > computerScore){
-    console.log("You've WON!")
-  }  else (
-    console.log("the game is over! you LOST!!")
-  )
-
