@@ -4,9 +4,13 @@ let computerScore = 0;
 //Create new html to show the results//
 
 let res = document.createElement('p');
+let game = document.createElement('p');
+
 let InfoDown = document.querySelector(".Info");
 
-res.textContent = `The player score:${humanScore}, The cpu score is:${computerScore}`;
+game.textContent = `What will you pick?`;
+res.textContent = `your score: ${humanScore}, the Computer score: ${computerScore}`;
+InfoDown.appendChild(game);
 InfoDown.appendChild(res);
 
 //**First get the player input and then pass the value to comparison */
@@ -52,23 +56,17 @@ function playRound(ch,cp){
     humanScore++;
     results = `you picked ${ch}, Computer picked ${cp}, you win!`
     scores = `your score: ${humanScore}, the Computer score: ${computerScore}`
-    console.log (results);
-    console.log(scores);
   } 
   else if (ch === "ROCK" && cp === "PAPER" || ch === "PAPER" && cp === "SCISSORS" || ch === "SCISSORS" && cp === "ROCK"){
     computerScore++;
     results = `you picked ${ch}, Computer picked ${cp}, you lost!`
     scores = `your score: ${humanScore}, the Computer score: ${computerScore}`
-    console.log (results);
-    console.log(scores);
   }
   else{
     results = `it\'s a draw, you picked ${ch}, and the computer picked ${cp}`;
     scores = `your score: ${humanScore}, the Computer score: ${computerScore}`
-    console.log (results);
-    console.log(scores);
   }
 
-
-  res.textContent = `The player score:${humanScore}, The cpu score is:${computerScore}`;
+  game.textContent = `${results}`;
+  res.textContent = `${scores}`;
 }
